@@ -1,0 +1,23 @@
+{
+  "name": "exam-1-duplicated-numbers",
+  "version": "1.0.0",
+  "description": "exam-1-duplicated-numbers",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mintmint95/exam-1-duplicated-numbers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mintmint95/exam-1-duplicated-numbers/issues"
+  },
+  "homepage": "https://github.com/mintmint95/exam-1-duplicated-numbers#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
