@@ -20,3 +20,9 @@ npm install
 ```bash
 npm run test
 ```
+
+or running with the code coverage
+
+```bash
+npm run test:coverage
+```
