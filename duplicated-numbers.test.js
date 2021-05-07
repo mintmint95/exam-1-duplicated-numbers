@@ -61,5 +61,4 @@ test('Case10: Input data as string to return false', () => {
   const input = 'test'
   const result = findDuplicatedNumber(input)
   expect(result).toBe(false)
-  console.log(typeof(input))
 })
