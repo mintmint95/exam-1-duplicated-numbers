@@ -1,4 +1,11 @@
-const findDuplicatedNumber = require('./duplicated-numbers.js')
+//const findDuplicatedNumber = require('./duplicated-numbers.js')
+const {
+  findDuplicatedNumber, 
+  sortDuplicatedDesc,
+  sortDuplicatedAsc,
+  sortMaxDuplicated,
+  sortMinDuplicated
+} = require('./duplicated-numbers.js')
 
 describe('Test function findDuplicatedNumber', () => {
   test('Case1: Find duplicated number in [2, 4, 88, 2, 78, 88, 34, 88] to equal 2, 88', () => {
@@ -87,4 +94,34 @@ describe('Test function findDuplicatedNumber', () => {
     const result = findDuplicatedNumber(input)
     expect(result).toBe(false)
   })
+
+  //Enhance to sort duplicated number by DESC
+  test('Case15: Sort duplicated number by DESC', () => {
+    const input = [2, 4, 88, 2, 78, 88, 34, 88]
+    const result = sortDuplicatedDesc(input)
+    expect(result).toBe('88,2')
+  })
+
+  //Enhance to sort duplicated number by ASC
+  test('Case16: Sort duplicated number by ASC', () => {
+    const input = [2, 4, 88, 2, 78, 88, 34, 88]
+    const result = sortDuplicatedAsc(input)
+    expect(result).toBe('2,88')
+  })
+
+  //Enhance to find max duplicated number
+  test('Case16: Find max duplicated number', () => {
+    const input = [2, 4, 88, 2, 78, 88, 34, 88]
+    const result = sortMaxDuplicated(input)
+    expect(result).toBe('88')
+  })
+
+  //Enhance to find min duplicated number
+  test('Case16: Find max duplicated number', () => {
+    const input = [2, 4, 88, 2, 78, 88, 34, 88]
+    const result = sortMinDuplicated(input)
+    expect(result).toBe('2')
+  })
+
+  //Enhance to find no duplicated (To be Continue...)
 })

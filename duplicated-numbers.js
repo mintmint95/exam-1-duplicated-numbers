@@ -40,4 +40,65 @@ function findDuplicatedNumber(numbers) {
   return summaryDuplicatedNumber(countNumber)
 }
 
-module.exports = findDuplicatedNumber
+function mapDuplicatedToArray(numbers) {
+  let countNumber = countDuplicatedNumber(numbers)
+  let tempDuplicate = []
+  for (const c in countNumber) {
+    if (countNumber[c] > 1) {
+      tempDuplicate.push({
+        number: c,
+        duplicate: countNumber[c]
+      })
+    }
+  }
+  return tempDuplicate
+}
+
+function sortDuplicatedDesc(numbers) {
+  let duplicateNumber = mapDuplicatedToArray(numbers)
+  let arrSortMaxToMin = duplicateNumber.sort((a, b) => (b.duplicate - a.duplicate))
+  let resultDesc = []
+  for (const a of arrSortMaxToMin) {
+    resultDesc.push(a.number)
+  }
+  return resultDesc.join()
+}
+
+function sortDuplicatedAsc(numbers) {
+  let duplicateNumber = mapDuplicatedToArray(numbers)
+  let arrSortMinToMax = duplicateNumber.sort((a, b) => (a.duplicate - b.duplicate))
+  let resultAsc = []
+  for (const a of arrSortMinToMax) {
+    resultAsc.push(a.number)
+  }
+  return resultAsc.join()
+}
+
+function sortMaxDuplicated(numbers) {
+  let duplicateNumber = mapDuplicatedToArray(numbers)
+  let arrSortMaxToMin = duplicateNumber.sort((a, b) => (b.duplicate - a.duplicate))
+  let resultDesc = []
+  for (const a of arrSortMaxToMin) {
+    resultDesc.push(a.number)
+  }
+  return resultDesc[0]
+}
+
+function sortMinDuplicated(numbers) {
+  let duplicateNumber = mapDuplicatedToArray(numbers)
+  let arrSortMinToMax = duplicateNumber.sort((a, b) => (a.duplicate - b.duplicate))
+  let resultAsc = []
+  for (const a of arrSortMinToMax) {
+    resultAsc.push(a.number)
+  }
+  return resultAsc[0]
+}
+
+//module.exports = findDuplicatedNumber
+module.exports = {
+  findDuplicatedNumber, 
+  sortDuplicatedDesc,
+  sortDuplicatedAsc,
+  sortMaxDuplicated,
+  sortMinDuplicated
+}
